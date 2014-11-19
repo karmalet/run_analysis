@@ -22,12 +22,10 @@ X <- tbl_df(X_df) # Transform to tbl
 duplicated_colNo <- duplicated(names(X))
 X <- X[,!duplicated_colNo] # length(names(X)) = 477
 
-## subsetting mean and std
-
-##extract_mean_std <- function(X, target){  # X = tbl_df; target = string
+## subsetting columns only with mean and std
   X_onlywith_mean <- select(X,contains("-mean")) # Error: found duplicated column name
   X_onlywith_std <- select(X,contains("-std"))
-##  return(X_onlywith_mean,X_onlywith_std)
+
 
 ## merge two blocks and make a new table X
 X <- cbind(X_onlywith_mean, X_onlywith_std)
@@ -45,8 +43,7 @@ names(X)<-gsub("[()]","",names(X))  ## remove brackets
 return(X)
 }
 
-## 4.Appropriately labels the data set with descriptive variable names.
-## 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+## function tidy, provides independent tidy data set with the average of each variable for each activity and each subject.
 tidy <- function(X){
   
 X %>%

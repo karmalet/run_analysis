@@ -3,6 +3,10 @@ run_analysis
 <title>Coursera GCD Course Project</title>
 the tidy data set created in step 5
 
+<b>run_analysis.R :</b> R scripts for extracting tidy data from Samsung dataset.<br>
+<b>GCD_projcet.txt :</b> the tidy data text file <br>
+
+<b>Code Book</b>
 <p>5 variables = {subject, activity, type, measure, value, average, group_n"} </p>
 
 <b>subject:</b> the subject who performed the activity for each window sample (1-30 numeric) <br>
